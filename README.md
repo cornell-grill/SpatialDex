@@ -4,18 +4,7 @@
 
 [Project Page](https://spatial-dex.github.io/) | [Paper](https://arxiv.org/abs/2610.29716)
 
-Xingyi He\*, Zhiwen Qiu\*, Adhitya Polavaram\*, Yunhao Cao\*, Cory Fan, Julius Samwer, Saleh Kalantari, Kuan Fang
-
-\* Equal contribution
-
 ![teaser](assets/teaser.gif)
-
-## TODO
-
-- [x] Pre-trained checkpoint
-- [x] DexJoCo checkpoints and evaluation
-- [x] Wuji + Tianji post-training and evaluation
-- [ ] Pre-training code
 
 ## Installation
 
@@ -64,7 +53,7 @@ weights/
     └── sweep_trash.json
 ```
 
-## DexJoCo
+## DexJoCo Evaluation
 
 ```bash
 python -m spatialdex.eval.dexjoco --task microwave --output outputs/microwave
@@ -72,7 +61,7 @@ python -m spatialdex.eval.dexjoco --task microwave --output outputs/microwave
 
 `--task` is one of `microwave`, `assembly`, `fold_glasses`, `water_plant`, `pick_bucket` and `hammer_nail`.
 
-## Wuji + Tianji
+## Wuji + Tianji Evaluation
 
 Download the [Wuji + Tianji dataset](https://drive.google.com/drive/folders/1JIuJSCrXiCDoeL8Y6iPGrPxHZdh2-kq8?usp=sharing) and place the task folders under `data/wuji_tianji/` as shown below.
 
