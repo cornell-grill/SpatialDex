@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spatialdex"
+version = "0.1.0"
+description = "SpatialDex: reconstruction-augmented visuomotor pre-training of 3D-grounded bimanual dexterity"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.10,<3.12"
+dependencies = [
+    "torch==2.5.1",
+    "torchvision==0.20.1",
+    "transformers==4.49.0",
+    "timm==0.9.10",
+    "safetensors",
+    "huggingface_hub",
+    "numpy==1.26.4",
+    "scipy",
+    "pillow",
+    "opencv-python",
+    "h5py",
+    "imageio[ffmpeg]",
+    "addict",
+    "packaging",
+    "mujoco==3.8.0",
+    "gymnasium==1.0.0",
+    "dm-robotics-transformations",
+    "glfw",
+    "mink==1.1.0",
+    "daqp",
+]
+
+[tool.setuptools.packages.find]
+include = ["spatialdex*"]

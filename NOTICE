@@ -1,0 +1,22 @@
+SpatialDex includes or is derived from the following third-party components.
+
+- VITRA (https://github.com/microsoft/VITRA), MIT License, Copyright (c) Microsoft Corporation.
+- Sonata / Point Transformer V3 (https://github.com/facebookresearch/sonata), Apache License 2.0.
+  Vendored in spatialdex/model/sonata.
+- DiT (https://github.com/facebookresearch/DiT), CC BY-NC 4.0. The action transformer in
+  spatialdex/model/action/dit.py is modified from DiT.
+- improved-diffusion (https://github.com/openai/improved-diffusion), MIT License. The DDIM sampler in
+  spatialdex/model/action/diffusion.py is modified from it.
+- DINOv2 (https://github.com/facebookresearch/dinov2), Apache License 2.0. The transformer layers in
+  spatialdex/model/pi3/layers.py are modified from DINOv2.
+- CroCo (https://github.com/naver/croco), CC BY-NC-SA 4.0. The 2D RoPE in spatialdex/model/pi3/pos_embed.py is
+  from CroCo.
+- Pi3 (https://github.com/yyfz/Pi3). The point decoder and head in spatialdex/model/geometry_head.py follow Pi3.
+
+Released model weights contain parameters fine-tuned from:
+
+- PaliGemma 2 (https://huggingface.co/google/paligemma2-3b-mix-224), Gemma Terms of Use
+  (https://ai.google.dev/gemma/terms). Use of the weights is subject to the Gemma Terms of Use and the
+  Gemma Prohibited Use Policy.
+- DINOv2 (https://github.com/facebookresearch/dinov2), Apache License 2.0.
+- Sonata (https://huggingface.co/facebook/sonata).

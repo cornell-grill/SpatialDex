@@ -1,0 +1,61 @@
+{
+  "vlm": {
+    "pretrained_model_name_or_path": "weights/paligemma2-3b-mix-224"
+  },
+  "action_model": {
+    "token_size": 2304,
+    "action_dim": 192,
+    "condition_mode": "legacy_concat",
+    "self_attention_mode": "causal"
+  },
+  "state_encoder": {
+    "state_dim": 212
+  },
+  "geo_fusion": {
+    "channel_attention_groups": 32,
+    "channel_attention_dim": 16,
+    "channel_attention_diagonal_bias": 0.5,
+    "mlp_ratio": 2.0,
+    "image_dropout_prob": 0.05,
+    "geo_dropout_prob": 0.01,
+    "use_learned_gate": true
+  },
+  "enable_future_geo_pred_supervision": true,
+  "enable_direct_geo_action_token": true,
+  "geo_action_loss_weight": 0.1,
+  "repeated_diffusion_steps": 8,
+  "patch_reso": 8,
+  "split_action_heads": {
+    "scheduled_sampling": {
+      "start_step": 0,
+      "end_step": 30000,
+      "start_prob": 0.0,
+      "end_prob": 1.0,
+      "num_ddim_steps": 4,
+      "cfg_scale": 1.0
+    },
+    "finger": {}
+  },
+  "hand_loss_weight": 0.4,
+  "wuji_tianji": {
+    "stride": 3,
+    "recorder_clock": true,
+    "recorder_ik": true,
+    "depth_max_valid_m": 20.0
+  },
+  "fp32_inference": true,
+  "training": {
+    "batch_size": 16,
+    "max_steps": 40000,
+    "save_steps": 2500,
+    "learning_rate": 7e-06,
+    "action_model_learning_rate": 7e-05,
+    "weight_decay": 0.1,
+    "gradient_clip_val": 1.0,
+    "warmup_steps": 1000,
+    "decay_start": 32000,
+    "decay_end": 40000,
+    "min_lr_ratio": 0.1
+  },
+  "statistics_path": "statistics/pass_toy.json"
+}

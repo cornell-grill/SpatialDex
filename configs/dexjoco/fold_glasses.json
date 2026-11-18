@@ -1,0 +1,72 @@
+{
+  "action_model": {
+    "action_dim": 192,
+    "condition_mode": "cross_attention",
+    "self_attention_mode": "bidirectional",
+    "token_size": 2304
+  },
+  "geo_fusion": {
+    "channel_attention_diagonal_bias": 0.5,
+    "channel_attention_dim": 16,
+    "channel_attention_groups": 32,
+    "mlp_ratio": 2.0,
+    "use_learned_gate": false
+  },
+  "patch_reso": 8,
+  "state_encoder": {
+    "state_dim": 212
+  },
+  "vlm": {
+    "pretrained_model_name_or_path": "weights/paligemma2-3b-mix-224"
+  },
+  "wrist_camera_conditioning": {
+    "dino": {
+      "image_size": 224
+    },
+    "num_heads": 8,
+    "pool_dim": 512,
+    "tokens_per_view": 256
+  },
+  "dexjoco": {
+    "env_name": "fold_glasses",
+    "instruction": "Left hand: None. Right hand: Fold the glasses and place them into the case.",
+    "camera": "front",
+    "fovy": 45.0,
+    "render_fps": null,
+    "image_height": 512,
+    "head_crop_box": null,
+    "depth_image_height": 512,
+    "depth_max_valid_m": 5.0,
+    "stride": 2,
+    "train_hz": 25.0,
+    "ee_to_mano": {
+      "right": [
+        [
+          -0.9971793609765032,
+          0.06709090306294159,
+          -0.0336471806945533,
+          -0.04500000000000001
+        ],
+        [
+          0.035114553721717685,
+          0.020813119748052143,
+          -0.9991665437569848,
+          1.1594987832180316e-16
+        ],
+        [
+          -0.06633468292995412,
+          -0.9975297613467744,
+          -0.02311028057013229,
+          0.020700000000000027
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  },
+  "statistics_path": "statistics/fold_glasses.json"
+}
