@@ -2,15 +2,19 @@
 
 <p align="center">
   Xingyi He*,
-  <a href="https://www.calvinzqiu.com/">Zhiwen Qiu</a>*,
+  Zhiwen Qiu*,
   Adhitya Polavaram*,
-  <a href="https://www.quantumcookie.xyz/">Yunhao Cao</a>*,
+  Yunhao Cao*,
   Cory Fan,
   Julius Samwer,
-  <a href="https://human.cornell.edu/people/saleh-kalantari">Saleh Kalantari</a>,
-  <a href="https://kuanfang.github.io/">Kuan Fang</a>
+  Saleh Kalantari,
+  Kuan Fang
   <br>
   <sub>* Equal contribution</sub>
+</p>
+
+<p align="center">
+  Cornell University
 </p>
 
 <p align="center">
