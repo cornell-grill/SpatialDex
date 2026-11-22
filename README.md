@@ -1,4 +1,4 @@
-<h1 align="center">SpatialDex: Reconstruction-Augmented Visuomotor Pre-Training of 3D-Grounded Bimanual Dexterity from RGB-Only Human Videos</h1>
+<h2 align="center">SpatialDex: Reconstruction-Augmented Visuomotor Pre-Training of 3D-Grounded Bimanual Dexterity from RGB-Only Human Videos</h2>
 
 <p align="center">
   Xingyi He*,
