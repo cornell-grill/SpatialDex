@@ -14,10 +14,6 @@
 </p>
 
 <p align="center">
-  Cornell University
-</p>
-
-<p align="center">
   <a href="https://spatial-dex.github.io/">[Project Page]</a>
   <a href="https://arxiv.org/abs/2610.29716">[Paper]</a>
   <a href="https://spatial-dex.github.io/#video">[Video]</a>
