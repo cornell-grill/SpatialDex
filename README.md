@@ -95,14 +95,14 @@ SpatialDex is a 3D-grounded visuomotor policy for bimanual dexterous manipulatio
 
 ![Data pipeline](assets/media/pipeline.webp)
 
-**Reconstructed human videos.** Examples of the reconstructed pre-training data. (Left) The scene geometry, camera, and hand motion recovered from the RGB videos. (Right) The input video with the estimated hands and the clip's per-hand language instructions.
+**Reconstructed human videos.** Examples of the reconstructed pre-training data. (Top) The scene geometry, camera, and hand motion recovered from the RGB videos (left), next to the input video with the estimated hands and the clip's per-hand language instructions (right). (Bottom) Reconstructed scenes and hand motion from twelve more clips.
 
 <p align="center">
   <img src="assets/media/human_recon_slideshow.webp" width="100%" alt="Reconstructed human-video clips with scene point cloud, camera, and MANO hands next to the input video and per-hand instructions">
 </p>
 
 <p align="center">
-  <img src="assets/media/human_recon_grid.webp" width="100%" alt="Recconstucted human-video clips, each going from the input video to its 3D reconstruction">
+  <img src="assets/media/human_recon_grid.webp" width="100%" alt="Reconstructed scene point clouds and MANO hands from twelve human-video clips">
 </p>
 
 **3D-grounded policy.** Depth is back-projected to 3D points, encoded with a point-cloud encoder, and fused into the visual token grid of a pre-trained VLM through gated residual fusion. A training-only head predicts future scene geometry. A wrist expert predicts both wrist trajectories, and a finger expert predicts finger actions conditioned on them.
