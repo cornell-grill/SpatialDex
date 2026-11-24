@@ -41,7 +41,8 @@
     "stride": 3,
     "recorder_clock": true,
     "recorder_ik": true,
-    "depth_max_valid_m": 20.0
+    "depth_max_valid_m": 20.0,
+    "layout": "nominal"
   },
   "fp32_inference": true,
   "training": {

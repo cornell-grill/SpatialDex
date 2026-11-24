@@ -29,6 +29,15 @@ def load_scene_model(xml_path):
     return mujoco.MjModel.from_xml_string(ET.tostring(root, encoding="unicode"))
 
 
+def layout_bodies(model):
+    """Body ids of the task object and of its target (the bin, or the dustpan when sweeping)."""
+    names = [mujoco.mj_id2name(model, mujoco.mjtObj.mjOBJ_BODY, i) or "" for i in range(model.nbody)]
+    sweepable = [i for i, n in enumerate(names) if n.startswith("sweepable_") and n.endswith("_object")]
+    if sweepable:
+        return sweepable[-1], [i for i, n in enumerate(names) if n.startswith("dustpan_") and n.endswith("_object")][-1]
+    return next(i for i, n in enumerate(names) if n in ("ball", "task_object_object")), names.index("bin")
+
+
 class ArmIK:
     def __init__(self, model, data, side, posture, elbow=None):
         joints = [f"Joint{i}_{side[0].upper()}" for i in range(1, 8)]
@@ -149,6 +158,16 @@ class Scene:
                 self.data.qvel[int(self.model.jnt_dofadr[qpos_to_joint[int(adr)]])] = 0.0
             for i, a in enumerate(self.hand_a[side]):
                 self.data.ctrl[a] = q_open[i]
+        mujoco.mj_forward(self.model, self.data)
+
+    def jitter(self, rng, amount):
+        """Shift the object, and the bin when there is one, by up to `amount` metres in x and y."""
+        obj, target = layout_bodies(self.model)
+        adr = int(self.model.jnt_qposadr[self.model.body_jntadr[obj]])
+        self.data.qpos[adr : adr + 2] += rng.uniform(-amount, amount, 2)
+        mocap = int(self.model.body_mocapid[target])
+        if mocap >= 0:  # the dustpan is a tool the robot holds, so it stays where it was recorded
+            self.data.mocap_pos[mocap, :2] += rng.uniform(-amount, amount, 2)
         mujoco.mj_forward(self.model, self.data)
 
     def render(self):
